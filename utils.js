@@ -6,8 +6,8 @@ const { BadRequestError } = require("./expressError");
 
 function convertStrNums(strNums) {
   const nums = strNums.map(str => {
-    if (!+str) throw new BadRequestError(`${str} is not a number.`);
-    return +str;
+    if (!Number(str)) throw new BadRequestError(`${str} is not a number.`);
+    return Number(str);
   });
 
   return nums;
